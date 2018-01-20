@@ -68,8 +68,9 @@ git push -u origin master
 ```
 
 ### RMarkdown pretty PDF challenge
-Paste your code from the in-class activity of recreating the example PDF.
-
+````
+`r paste(readLines('module_1/pretty_html.Rmd', encoding = "UTF-8"), collapse = '\n')`
+````
 
 
 ## Origins and Earth Systems
