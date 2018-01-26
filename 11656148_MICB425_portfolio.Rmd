@@ -96,7 +96,8 @@ Describe the numerical abundance of microbial life in relation to ecology and bi
     * Total protoplasmic biomass on Earth in microbes is far higher than plants
     * Lower limit in prokaryotic turnover time ranges from 6-25 days to ~1000 days (1-2 thousand years for subsurface bacteria, however it is far longer than expected and is based on one sample) 
     * 0.4, 0.5, 3.4, and 170 hours avg for 4 mutations from the pool of all genes shared by marine heterotrophs (in the upper 200 m), marine autotrophs, soil prokaryotes, or prokaryotes in domestic animals
-    * 60 years avg for 5 mutations from the pool of all genes shared by all 4 groups  
+    * 60 years avg for 5 mutations from the pool of all genes shared by all 4 groups    
+
 
 * Do new questions arise from the results?  
 
@@ -115,26 +116,94 @@ Describe the numerical abundance of microbial life in relation to the ecology an
 #### Specific questions:
 * What are the primary prokaryotic habitats on Earth and how do they vary with respect to their capacity to support life? Provide a breakdown of total cell abundance for each primary habitat from the tables provided in the text.  
 
+    The habitats are **aquatic, soil,** and **subsurface**  
+    
+    Total cell abundances:  
+    
+    Aquatic: \(1.181E29\) cells  
+    Soil:   \(2.556E29\) cells  
+    Subsurface: \(3.8E30\) cells  
+    
+    ![](module_1/whitman_table1.PNG)  
+    ![](module_1/whitman_table2.PNG)  
+    ![](module_1/whitman_table3.PNG)  
+
 * What is the estimated prokaryotic cell abundance in the upper 200 m of the ocean and what fraction of this biomass is represented by marine cyanobacterium including Prochlorococcus? What is the significance of this ratio with respect to carbon cycling in the ocean and the atmospheric composition of the Earth?  
 
-* What is the difference between an autotroph, heterotroph, and a lithotroph based on information provided in the text?  
+    The estimated prokaryotic cell abundance is 5E5 cells/mL, or 360E26 cells total.  
+    Marine cyanobacteria & Procholorococcus account for 4E4 of the cells per mL, or 8% of all prokaryotic cells in the top 200m.  
+    They are responsible for atmospheric oxygenation and carbon assimilation.
+
+* What is the difference between an autotroph, heterotroph, and a lithotroph based on information provided in the text?   
+
+    Autotroph: Energy source independent of organic substrates  
+    Heterotroph: Energy source from organic carbon substrates  
+    Lithotroph: Energy source from inorganic substrates  
 
 * Based on information provided in the text and your knowledge of geography what is the deepest habitat capable of supporting prokaryotic life? What is the primary limiting factor at this depth?  
+    
+    At a subsurface depth of 4km, the average temperature is 125C.  
+    This is close to the temperature limit for prokaryotic life.  
+    The high temperature is likely due to geothermal processes.  
+    On average, the temperature increases by 22 degrees Celsius per km depth.
 
 * Based on information provided in the text your knowledge of geography what is the highest habitat capable of supporting prokaryotic life? What is the primary limiting factor at this height?  
 
+    Prokaryotic life has been detected in the air at very low qualtities up to 57-77km (more likely 20km realistically).  
+    The low temperature & pressure as well as extreme solar radiation are limiting factors at this height.  
+    However it is arguable that the atmosphere is capable of supporting growth (as opposed to transport) due to the lack of many essential nutrients at any appreciable concentrations.
+
 * Based on estimates of prokaryotic habitat limitation, what is the vertical distance of the Earth’s biosphere measured in km?  
+
+    If including the atmosphere, Earth's biosphere spans from approx. 20km above the summit of Mt. Everest to approx. 4.5km below the Marianas Trench. This amounts to approx. 44km. 
 
 * How was annual cellular production of prokaryotes described in Table 7 column four determined? (Provide an example of the calculation)  
 
+    Annual cellular production is the population size mutiplied by the number of turnover periods in a year.  
+    For marine heterotrophs above 200m:  
+    Population size = \(3.6E28\) cells  
+    Turnover period = \(16\) days  
+    Annual cellular production = population * turnover/yr = \(3.6E28\frac{365}{16} = 8.215E29\) cells/yr  
+    *Aside*: Viruses play a significant role in driving this turnover. Viruses often carry accesorry metabolism genes (AMG) which directly modulates cellular metabolism. At a larger scale, this in turn modulates the metabolism of the community.
+
 * What is the relationship between carbon content, carbon assimilation efficiency and turnover rates in the upper 200m of the ocean? Why does this vary with depth in the ocean and between terrestrial and marine habitats?  
+
+    A number of assumptions need to be made to establish these relationships.  
+    
+    Assuming:  
+    20fg = 20E-30Pg of C per cell and  
+    3.6E28 marine heterophs in the upper 200m  
+    We can estimate that there are:  
+    3.6E28 * 2E-30 = 0.72Pg C in marine heterotrophs in the upper 200m  
+    
+    Assuming:  
+    20% carbon assimilation efficiency (growth efficiency, substrate use efficiency)  
+    We can estimate that amount of C required per turnover to be:  
+    4 * 0.72 = 2.88Pg (unclear why the author used a factor of 4 instead of 5)  
+    
+    Assuming:  
+    The net primary production in terms of C is 51Pg/yr and  
+    85% of it is consumed in the top 200m, all by prokaryotes  
+    We can estimate that the amount of C available per year is:  
+    51 * 0.85 = 43Pg/yr  
+    
+    This works out to 43/2.88 = 14.9 turnovers per year or 24.5 days  
 
 * How were the frequency numbers for four simultaneous mutations in shared genes determined for marine heterotrophs and marine autotrophs given an average mutation rate of 4 x 10^-7^ per DNA replication? (Provide an example of the calculation with units. Hint: cell and generation cancel out)  
 
+    The probability of 4 simultaneous mutations would be (4E-7)^4^ = 2.56E-26 per replication.  
+    
+    Given the turnover rate to be 8.215E29 cells/yr from a previous question, then there is an average of 8.2E29 * 2.56E-26 = 2.1E4 four simultaneous mutation events per year, or about 0.4 per hour.
+
+
 * Given the large population size and high mutation rate of prokaryotic cells, what are the implications with respect to genetic diversity and adaptive potential? Are point mutations the only way in which microbial genomes diversify and adapt?  
 
-* What relationships can be inferred between prokaryotic abundance, diversity, and metabolic potential based on the information provided in the text? 
+    The prokaryotic genomes have tremendous abilities to change given high mutation rates, large population size, and rapid turnover rates. By accumulating mutations not only through point mutations but also through insertion, deletion, HGT and recombination, mutations can rapidly spread horizontally and vertically. This makes the world of prokaryotes incredibly diverse and adaptable to any kind of biologically viable habitat.
 
+* What relationships can be inferred between prokaryotic abundance, diversity, and metabolic potential based on the information provided in the text?  
+    
+    Since there is high diversity, there is also a wide range of metabolic capabilities.  
+    Since there is also high abundance, the impact/extent of metabolism on the Earth is also very large - enough to oxygenate the atmosphere, for example.
 
 ### Module 01 references
 Whitman WB, Coleman DC, and Wiebe WJ. 1998. Prokaryotes: The unseen majority. Proc Natl Acad Sci USA. 95(12):6578–6583.  [PMC33863](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC33863/)
