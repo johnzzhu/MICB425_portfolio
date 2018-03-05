@@ -134,7 +134,7 @@ $(document).ready(function ()  {
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
     };
-    options.showAndHide = true;
+    options.showAndHide = false;
     options.smoothScroll = true;
 
     // tocify
@@ -197,6 +197,12 @@ div.tocify {
   border-radius: 0px;
 }
 
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
 
 </style>
 
@@ -218,68 +224,13 @@ div.tocify {
 
 <h1 class="title toc-ignore">MICB425 Portfolio - Microbial Ecological Genomics: From Genomes to Biomes, Spring 2018</h1>
 <h4 class="author"><em>Zijie John Zhu (11656148)</em></h4>
-<h4 class="date"><em>version February 15, 2018</em></h4>
+<h4 class="date"><em>version March 04, 2018</em></h4>
 
 </div>
 
 
 <div id="module-01" class="section level1">
 <h1>Module 01</h1>
-<div id="module-01-portfolio-check" class="section level2">
-<h2>Module 01 portfolio check</h2>
-<ul>
-<li>Installation check
-<ul>
-<li>Completion status:</li>
-<li>Comments:</li>
-</ul></li>
-<li>Portfolio repo setup
-<ul>
-<li>Completion status:</li>
-<li>Comments:</li>
-</ul></li>
-<li>RMarkdown Pretty PDF Challenge
-<ul>
-<li>Completion status:</li>
-<li>Comments:</li>
-</ul></li>
-<li>Evidence worksheet_01
-<ul>
-<li>Completion status:</li>
-<li>Comments:</li>
-</ul></li>
-<li>Evidence worksheet_02
-<ul>
-<li>Completion status:</li>
-<li>Comments:</li>
-</ul></li>
-<li>Evidence worksheet_03
-<ul>
-<li>Completion status:</li>
-<li>Comments:</li>
-</ul></li>
-<li>Problem Set_01
-<ul>
-<li>Completion status:</li>
-<li>Comments:</li>
-</ul></li>
-<li>Problem Set_02
-<ul>
-<li>Completion status:</li>
-<li>Comments:</li>
-</ul></li>
-<li>Writing assessment_01
-<ul>
-<li>Completion status:</li>
-<li>Comments:</li>
-</ul></li>
-<li>Additional Readings
-<ul>
-<li>Completion status:</li>
-<li>Comments</li>
-</ul></li>
-</ul>
-</div>
 <div id="data-science-friday" class="section level2">
 <h2>Data science Friday</h2>
 <div id="installation-check" class="section level3">
@@ -289,7 +240,7 @@ div.tocify {
 <div id="portfolio-repo-setup" class="section level3">
 <h3>Portfolio repo setup</h3>
 <p><em>Set up Git user locally</em></p>
-<pre><code>git config --global user.name &quot;johnzzhu&quot;
+<pre><code>git config --global user.name $USERNAME
 git config --global user.email $EMAIL</code></pre>
 <p><em>Creating local repository</em></p>
 <pre><code>cd $REPO_DIR
@@ -332,7 +283,7 @@ Perhaps you’re already really confused by the whole markdown thing. Maybe you�
 1231521+12341556280987
 ```
 
-###Table Time
+### Table Time
 Or maybe, after you’ve added those numbers, you feel like it’s about time for a table!  
 I’m going to leave all the guts of the coding here so you can see how libraries (R packages) are loaded into R (more on that later). It’s not terribly pretty, but it hints at how R works and how you will use it in the future. The summary function used below is a nice data exploration function that you may use in the ^^future^^.
 
@@ -352,8 +303,8 @@ biocLite(&quot;phyloseq&quot;)</code></pre>
 <p>Load libraries &amp; data</p>
 <pre class="r"><code>library(tidyverse)
 library(phyloseq)
-metadata=read.table(file=&quot;Saanich.metadata.txt&quot;, header=TRUE, row.names=1, sep=&quot;\t&quot;, na.strings=&quot;NAN&quot;)
-load(&quot;phyloseq_object.RData&quot;)</code></pre>
+metadata=read.table(file=&quot;module_1/Saanich.metadata.txt&quot;, header=TRUE, row.names=1, sep=&quot;\t&quot;, na.strings=&quot;NAN&quot;)
+load(&quot;module_1/phyloseq_object.RData&quot;)</code></pre>
 <p>Plot 1: Simple scatterplot</p>
 <pre class="r"><code>ggplot(metadata, aes(x=PO4_uM, y=Depth_m)) + 
   geom_point(shape=17, color=&quot;purple&quot;)</code></pre>
@@ -386,7 +337,7 @@ plot_bar(physeq_percent, fill=&quot;Domain&quot;) +
 <h2>Origins and Earth Systems</h2>
 <div id="evidence-worksheet-01" class="section level3">
 <h3>Evidence worksheet 01</h3>
-<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC33863/">Whitman <em>et al</em> 1998</a></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC33863/">Whitman <em>et al</em> 1998</a> <em>Prokaryotes: The unseen majority</em></p>
 <div id="learning-objectives" class="section level4">
 <h4>Learning objectives</h4>
 <p>Describe the numerical abundance of microbial life in relation to ecology and biogeochemistry of Earth systems.</p>
@@ -417,6 +368,7 @@ Which hypothesis is true: metabolic inactivity, lithotrophic metabolism, overest
 </div>
 <div id="problem-set-01" class="section level3">
 <h3>Problem set 01</h3>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC33863/">Whitman <em>et al</em> 1998</a> <em>Prokaryotes: The unseen majority</em></p>
 <div id="learning-objectives-1" class="section level4">
 <h4>Learning objectives</h4>
 <p>Describe the numerical abundance of microbial life in relation to the ecology and biogeochemistry of Earth systems.</p>
@@ -487,13 +439,25 @@ Since there is also high abundance, the impact/extent of metabolism on the Earth
 </ul>
 </div>
 </div>
-<div id="evidence-worksheet-02-life-and-the-evolution-of-earths-atmosphere" class="section level3">
-<h3>Evidence Worksheet 02 “Life and the Evolution of Earth’s Atmosphere”</h3>
+<div id="evidence-worksheet-02" class="section level3">
+<h3>Evidence Worksheet 02</h3>
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/12004117">Kasting &amp; Siefert, 2002</a> <em>Life and the evolution of Earth’s atmosphere</em></p>
+<p><a href="https://www.nature.com/articles/35059210">Nisbet &amp; Sleep, 2001</a> <em>The habitat and nature of early life</em></p>
 <div id="learning-objectives-2" class="section level4">
 <h4>Learning objectives</h4>
 <p>Comment on the emergence of microbial life and the evolution of Earth systems</p>
+</div>
+<div id="general-questions-1" class="section level4">
+<h4>General Questions</h4>
 <ul>
-<li><p>Indicate the key events in the evolution of Earth systems at each approximate moment in the time series. If times need to be adjusted or added to the timeline to fully account for the development of Earth systems, please do so.</p>
+<li><p>Indicate the key events in the evolution of Earth systems at each approximate moment in the time series. If times need to be adjusted or added to the timeline to fully account for the development of Earth systems, please do so.</p></li>
+<li><p>Describe the dominant physical and chemical characteristics of Earth systems at the following waypoints</p>
+<ul>
+<li><p><strong>Hadean</strong><br />
+Hot &amp; dry<br />
+Often molten due to constant bombardment<br />
+Oceans cannot form<br />
+CO2 tied up in minerals</p>
 <ul>
 <li><p>4.6 billion years ago<br />
 Inner solar system formed<br />
@@ -505,6 +469,12 @@ Moon forming impact led to Earth spin, tilt, generated diurnal cycle &amp; seaso
 <li><p>4.1 billion years ago Evidence of life found in graphite in Zircons</p></li>
 <li><p>4.0 billion years ago<br />
 Evidence of plate subduction Oldest rock - Acasta gneiss from Canada</p></li>
+</ul></li>
+<li><p><strong>Archean</strong><br />
+Cooldown of Earth<br />
+Oceans formed Early sun is still dim (30% dimmer)<br />
+Methanogenesis kept Earth from freezing</p>
+<ul>
 <li><p>3.8 billion years ago<br />
 Bombardments halted<br />
 Oceans formed<br />
@@ -518,15 +488,22 @@ Microfossils, stromatolites Evidence of isotopic partition of C from carbonate M
 First glaciation event - oxygen stops methanogensis</p></li>
 <li><p>2.7 billion years ago<br />
 Evidence of cyanobacteria &amp; eukaryotes</p></li>
-<li><p>2.5 billion years ago<br />
-second glaciation event???</p></li>
+</ul></li>
+<li><p><strong>Proterozoic</strong><br />
+Oxygeneated atmosphere<br />
+Increased complexity of life</p>
+<ul>
 <li><p>2.2 billion years ago<br />
 Great oxidation event - sharp increase in O2 (may involve complex eukaryotes)<br />
 Evidence of redbeds containing iron oxide<br />
 Regulation of mitochondria &amp; chloroplasts may modulate balance of photosynthesis, CO2 &amp; N fixation</p></li>
-<li><p>2.1 billion years ago Oxygenic photosynthesis in cyanobacteria??????</p></li>
-<li><p>1.9 billion years ago Eukayotes</p></li>
+<li><p>2.1 billion years ago Oxygenic photosynthesis in cyanobacteria</p></li>
 <li><p>1.2 billion years ago Evidence of sexual reproduction</p></li>
+</ul></li>
+<li><p><strong>Phanerozoic</strong><br />
+Evolution of higher organisms<br />
+Several extinction events Very high atmospheric oxygenation at one point, correlated to gigantism</p>
+<ul>
 <li><p>500 million years ago Cambrian explosion</p></li>
 <li><p>400 million years ago Devonian explosion - land plants Fish, cephalopods, corals formed</p></li>
 <li><p>300 million years ago Gigantism Formation of Pangae</p></li>
@@ -537,27 +514,13 @@ Regulation of mitochondria &amp; chloroplasts may modulate balance of photosynth
 <li><p>550,000 years ago Archaic humans first appear</p></li>
 <li><p>200,000 years ago Homo sapiens first appear</p></li>
 </ul></li>
-</ul>
-<p>Early Archean S processing archaea (hyperthermophile) Methanogens (hyperthermophile) Lower temp methanogens appeared later</p>
-<ul>
-<li><p>Describe the dominant physical and chemical characteristics of Earth systems at the following waypoints:</p>
-<ul>
-<li><p>Hadean<br />
-Hot, molten</p></li>
-<li><p>Archean<br />
-Early sun dim, 30% dimmer in archarern &lt;, would freesze without greenhouse Methanogenesis kept Earth from freezing</p></li>
-<li><p>Precambrian</p></li>
-<li><p>Proterozoic</p></li>
-</ul>
-<p>increased complexity &amp; oxygen in proterozoic</p>
-<ul>
-<li>Phanerozoic</li>
 </ul></li>
 </ul>
 </div>
 </div>
-<div id="problem-set-02-microbial-engines" class="section level3">
-<h3>Problem set 02 “Microbial Engines”</h3>
+<div id="problem-set-02" class="section level3">
+<h3>Problem set 02</h3>
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/18497287">Falkowski <em>et al</em> 2008</a> <em>The microbial engines that drive Earth’s biogeochemical cycles</em></p>
 <div id="learning-objectives-3" class="section level4">
 <h4>Learning objectives</h4>
 <p>Discuss the role of microbial diversity and formation of coupled metabolism in driving global biogeochemical cycles.</p>
@@ -570,32 +533,561 @@ Early sun dim, 30% dimmer in archarern &lt;, would freesze without greenhouse Me
 <p>Abiotic processes are primarily acid-base (H ions), because most of molecular H has escaped to space during Earth’s formation, whereas biotic processes are primarily redox (electrons).</p></li>
 <li><p>Why is Earth’s redox state considered an emergent property?</p>
 <p>Since biological processes are largely redox based, and Earth’s abiotic processes interacts and ultimately drive the biological processes, Earth’s redox state is a property tightly linked to its biosphere, thus it’s considered an emergent property.</p></li>
-<li><p>How do reversible electron transfer reactions give rise to element and nutrient cycles at different ecological scales? What strategies do microbes use to overcome thermodynamic barriers to reversible electron flow?</p></li>
+<li><p>How do reversible electron transfer reactions give rise to element and nutrient cycles at different ecological scales? What strategies do microbes use to overcome thermodynamic barriers to reversible electron flow?</p>
+<p>Since much of microbial metabolism involves redox reactions of the 6 major elements, the sum of metabolism at the micro scale transforms the plant at the macro scale.<br />
+Microbes take advantage of Le Chatelier’s principle, which can moderate thermodynamic favourability by limiting the relative abundance of reaction products and reactants.<br />
+Methane oxidizing organisms form mutualistic relationships with hydrogen-consuming sulfate reducers. Through continued consumption of hydrogen, its concentration remains low, making methane oxidization favorable.<br />
+Similarly, the TCA cycle which oxidizes organic carbon into CO2 is also run in reverse in carbon fixing bacteria such as GSBs.</p></li>
 <li><p>Using information provided in the text, describe how the nitrogen cycle partitions between different redox “niches” and microbial groups. Is there a relationship between the nitrogen cycle and climate change?</p>
 <p>N cycling involves many different redox niches and microbial group. Nitrogen fixation is carried out solely anaerobically by nitrogenase. Ammonia is oxidized to nitriate or nitrite aerobically by nitrifying bacteria. Another reductive process used by yet other microbes anaerobically reduce ntrite and nitrate to dinitrogen. Different microbes that run parts of this cycle are often segregated in time and/or space, due to different requirements in reaction conditions.</p>
 <p>N cycling and climate change may be related in that nitrifying bacteria undergo carbon fixation &amp; assimilation by reducing CO2 while oxidizing ammonia, thus reducing atmospheric CO2.</p></li>
 <li><p>What is the relationship between microbial diversity and metabolic diversity and how does this relate to the discovery of new protein families from microbial community genomes?</p>
-<p>Metabolic and microbial diversity are often, but not always correlated. For example, the presence of fundamental metabilic processes does not reflect the actual microbial diversity. Neither do simple pathways such as rhodopsin based photosynthesis.</p>
-<p>New protein families - may exist in other microbes too???</p></li>
+<p>Metabolic and microbial diversity are often, but not always correlated. For example, the presence of fundamental metabilic processes does not reflect the actual microbial diversity. Neither do simple pathways such as rhodopsin based photosynthesis.</p></li>
 <li><p>On what basis do the authors consider microbes the guardians of metabolism?</p>
 <p>Since the “core planetary gene set” which enables the fundamental metabilic processes is widespread in diverse species of microbes, the extinction of even the majority of the species does not necessarily mean the loss of this set. This microbes as a whole are considered as guardians of metabolism.</p></li>
 </ul>
 </div>
 </div>
-<div id="additional-questions" class="section level3">
-<h3>Additional questions???</h3>
-<p>Are the niches for all possible redox rxns occupied by microbial metabolism?</p>
-<pre><code>No, there are some niches that most likely cannot be occupied by microbial metabolism.
-All chemical reactions need to overcome activation energies, regardless of the differences in free energies. This implies that reactions with high activation energies may not sometimes be feasible biologically, especially in a highly competitive environment because it may be difficult to capture enough energy for the reaction to proceed.
-This is reflected in the lack of eviddence for the direct oxidation of dinitrogen to nitrate, or the use of ammonia as electron donors for photosynthesis.
-A similar issue exists involving solid electron donors/acceptors, where the organism has to invest energy to transport electrons to/from the substrate.</code></pre>
-<p>apparent diversity Each microbial genome contains a core planetary gene set, along with a set of accessory/boutique genes which may not be common to all microbes. Core planetry gene set contains genes relating to (DNA replication, transcription, translation, stress proteins, etc.). These are conserved functionally to maintain a set of core functionns common to survival, and this often leads to genes conserved phylogeneticallly. The accessory genes allow for specialized functions.</p>
-<p>how does the ancietn HGT to diff organisms Pathways tend to be resilient because parts or all of a pathway are usually distributed over multiple species as the result of HGT. Even if a species does not phenotypically present a function, it does not necessarily mean that such genes do not exist in its genome, due to the regulation of gene expression. Genotype at the individual level does not necessaruly equate with that at the population level either, by the same argument. It can be argued that pathways are sometimes emergent, as it is not observed in a isolated species, but rather observed in a population.</p>
-<p>do machine metaphors Similar: Microbes both have inputs and outputs Machines evolve over time by improvments in design, and microbes accumualate mutations Both consume chemical energy Different: We understanding machines but we don’t fully understanding microbes</p>
+<div id="evidence-worksheet-03" class="section level3">
+<h3>Evidence worksheet 03</h3>
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/26744408">Waters et al 2016</a> <em>The Anthropocene is functionally and stratigraphically distinct from the Holocene</em></p>
+<div id="learning-objectives-4" class="section level4">
+<h4>Learning objectives</h4>
+<p>Evaluate human impacts on the ecology and biogeochemistry of Earth systems</p>
 </div>
-<div id="module-01-references" class="section level3">
-<h3>Module 01 references</h3>
-<p>Whitman WB, Coleman DC, and Wiebe WJ. 1998. Prokaryotes: The unseen majority. Proc Natl Acad Sci USA. 95(12):6578–6583. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC33863/">PMC33863</a></p>
+<div id="general-questions-2" class="section level4">
+<h4>General questions</h4>
+<ul>
+<li><p>What were the main questions being asked?</p>
+<p>What are some stratigraphic signatures in sediments and ice that reflect human activities which support the designation of the Anthropocene epoch?</p></li>
+<li><p>What were the primary methodological approaches used?</p>
+<p>This article is a review, summarizing findings of primary literature.</p></li>
+<li><p>Summarize the main results or findings.</p>
+Geological evidence showed
+<ul>
+<li>Traces of elemental aluminum, concrete, plastics from developlent of modern materials<br />
+</li>
+<li>Traces of carbonaceous particles from fossil fuel burning</li>
+<li>Increased polyaromatic hydrocarbons, PCBs, pesticide from synthetic chemicals</li>
+<li>Changed lead isotopic ratios from burning of leaded gasoline</li>
+<li>Increased rates of sedimentation due to increased erosion</li>
+<li>Elevated levels of nitrogen and phosphorus in lake strata &amp; Greenland ice</li>
+<li>Elevated levels of radioisotopes C-14 and Pu-239 due to thermonuclear weapons tests</li>
+<li>Steep fall in C-13 ratio captured in tree rings, limestones, and calcareous fossils associated with elevated atmospheric CO2 and CH4 starting around 1850-1950</li>
+<li>Increased temperature, O-18 ratio in Greenland ice, and rising global sea levels beyond Holocene levels</li>
+</ul>
+<p>Additionally there is increased rates of extinction and changes in species composition due to human exploitation and species invasion.</p></li>
+<li><p>Do new questions arise from the results?</p>
+<p>Should we formalize the Anthropocene as a stratigraphic entity like other epochs? Should we simply keep it informal like the Precambrian?<br />
+How should we define the Anthropocene, by GSSA (calendar age), and/or GSSP (stratal section)? When does it formally begin?</p></li>
+<li><p>Were there any specific challenges or advantages in understanding the paper (<em>e.g.</em> did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?</p>
+<p>Since the focus of this article is on stratigraphic/geologic evidence, the discussion of species extinction and diversity sounds a bit out of place. But otherwise the discussion was easy to follow.</p></li>
+</ul>
+</div>
+</div>
+<div id="module-essay" class="section level3">
+<h3>Module Essay</h3>
+<pre><code>Microbial life is ubiquitous. Although mostly invisible to the naked eye, they are in fact orders of magnitude more abundant in number than that of visible, higher life forms that we know of. Microbes have also inhabited Earth since the Archean eon (Nisbet &amp; Sleep, 2003). Humans, on the other hand, have only come into existence extremely recently in geological time, inescapably dependent upon the works of the unseen majority (Whitman &amp; Wiebe, 1998). Unsurprisingly, microbial metabolism on Earth then becomes a cornerstone of biological fluxes in practically every major geochemical cycle. Microbes can, and have lived on a planet without humans, but humans would not have existed, nor can we continue to survive, without the global catalysis and environmental transformations carried out by microbes. This is evident in through key fluxes of the global oxygen, nitrogen, and carbon cycles.  
+
+From the perspective of oxygen cycle, microbial life has not only laid the foundation of aerobic respiration, but it also continues to provide a large source of oxygen today. Humans respire aerobically, using molecular oxygen as a terminal electron acceptor (TEA) at the end of cellular electron transport chains (ETC). By deriving electrons from organic carbon sources and relaying them through the ETC, cells transform energy in the form of redox potentials into adenosine triphosphate (ATP), the cellular energy currency. However, the atmosphere was anoxic until 2.2Gya (Nisbet &amp; Sleep, 2003). Moreover, the earliest evidence of Rubisco, which is the key enzyme responsible for oxygenic photosynthesis, was dated at 3.5Gya (Nisbet &amp; Sleep, 2003, Schidlowski &amp; Aharon, 1992). This provides strong evidence that microbial oxygenic photosynthesis initially provided the molecular oxygen required for the development of aerobic respiration carried out by humans today. Additionally, microbial generation of oxygen continues to contribute substantially to the global oxygen supply. Oxygenic photosynthesis in oceanic ecosystems is approximately on-par with terrestrial ecosystems in terms of total flux (Walker et al. 1980). Therefore microbial metabolism contributes to approximately half of global oxygen output. If global microbial life had not existed, or was to suddenly be halted, atmospheric oxygen concentration would not remain at levels necessarily to support human life. Microbial sources of oxygen has not only once played, but also continues to play, a crucial role in human survival.  
+
+From the perspective of the nitrogen cycle, we rely on microbes for a balanced cycle necessary to sustain current ecosystems. In order to make us independent of global microbial catalysis, we must artificially replace microbial geochemical fluxes, which means developing an industrial process with sufficient scale. This implies both ubiquity and volume. Consider nitrification for instance. Nitrifying bacteria is pervasive, converting soil ammonia to nitrates, which is a source of preferred nitrogen by some plants due to its higher diffusion rates compared to ammonia (Raven et al. 1992). If all microbial metabolism were to halt, we cannot yet carry out nitrification at a scale pervasive enough to resupply every ecosystem with the nitrates currently supplied by microbes. Additionally, while chemically possible, we do not have the technology to perform abiological nitrification with a significant flux to effectively contribute to the global nitrogen cycle. In fact, we commonly rely on microbial metabolism for large scale nitrification, such as waste water treatment. Lack of microbial nitrification may lead to depletion of soil nitrates, in turn disrupting global flora diversity. Furthermore, even if abiological processes with significant rates exist, as exemplified by the nitrogen fixing Haber-Bosch process, we would still be faced with difficulties in integrating it amongst other fluxes to  maintain the balance. The primary use of industrially fixed nitrogen, in the form of ammonia, is a nitrogen source for fertilizers. Their use often results in eutrophication of nearby still waters due to nitrogen-containing effluent (Callisto et al. 2013). Therefore microbial metabolic fluxes in the nitrogen cycle is irreplaceable due to the sheer ubiquity, volume, and the intricacy of flux balance required to maintain current global ecosystems.  
+
+Perhaps most significantly, from the perspective of the carbon cycle, humans rely on microbial life to respire a large portion of organic carbon. As heterotrophs, we gain energy by oxidizing organic carbon to inorganic carbon dioxide. Therefore we must depend on a continuous source of organic carbon, which ultimately originates from plant primary production. Microbial metabolism plays a critical factor in replenishing atmospheric carbon by decomposing and respiring biomass. It is estimated that microbial metabolism accounts for approximately half of all terrestrial biological soil respiration, or approximately 51-60 Pg/yr of carbon (Hashimoto et al., 2015; Shao et al, 2013). Microbes also carry out virtually all biological respiration in the open oceans, at approximately 66 Pg/yr of carbon (del Giorgio &amp; Duarte 2002). Without global microbial decomposition, biomass will likely accumulate, and humans will not be able to decompose biomass at a global scale. This limits the global replenishment of carbon dioxide, ultimately reducing primary productivity. Thus we rely on the microbial power to catalyze global biomass decay.  
+
+Microbial life can easily live without us; we, however, cannot survive without the global catalysis and environmental transformations it provides. This is exemplified through some of the key roles of microbial metabolism within 3 major biogeochemical cycles. Microbial metabolism oxygenated the atmosphere, enabling aerobic respiration. Microbial metabolism nitrifies reduced nitrogen species pervasively and with globally significant flux, as well as denitrifies while maintaining ecosystem balance. Microbial metabolism also replenishes atmospheric carbon by respiring biomass, thereby making carbon available to for primary production. While microbes can, and have, persisted without the presence of humans, our existence must be supported by the continuous nutrient flux driven by microbial metabolism. We may think that humans are at the helm of Space Ship Earth (Achenbach, 2012). However it is crucial to realize that the Ship is powered by microbes, without which neither we, nor most other higher life forms, can survive. If all microbial metabolism were to suddenly halt, Earth will seemingly come under the grasp of an invisible disease, which may see all remaining life on Earth slowly grind to a halt, as all usable forms of nutrients cease to exist.
+    </code></pre>
+</div>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<ol style="list-style-type: decimal">
+<li>Achenbach J. Spaceship Earth: a new view of environmentalism. Washington Post [Internet]. 2012 Jan 2.<br />
+</li>
+<li>Callisto M, Molozzi J, Barbosa JLE. Eutrophicaion of lakes. In: Ansari AA, Gill SS. Eutrophication: causes, consequences, and control. Dordrecht: Springer; 2013.<br />
+</li>
+<li>Del giorgio PA, Duarte CM. Respiration in the open ocean. Nature. 2002;420(6914):379-84.<br />
+</li>
+<li>Falkowski PG, Fenchel T, Delong EF. The microbial engines that drive Earth’s biogeochemical cycles. Science. 2008;320(5879):1034-9.<br />
+</li>
+<li>Hashimoto S, Carvalhais N, Ito A, Migliavacca M, Nishina, Reichstein M. Global spatiotemporal distribution of soil respiration modeled</li>
+<li>Kasting JF, Siefert JL. Life and the evolution of Earth’s atmosphere. Science. 2002;296(5570):1066-8.<br />
+</li>
+<li>Nisbet EG, Sleep NH. The habitat and nature of early life. Nature. 2001;409(6823):1083-91.<br />
+</li>
+<li>Raven JA, Wollenweber B, Handley LL. A comparison of ammonium and nitrate as nitrogen sources for photolithotrophs. New Phytologist. 1992;121:19–32. doi: 10.1111/j.1469-8137.1992.tb01088.x<br />
+</li>
+<li>Schidlowski M, Aharon P. Carbon cycle and carbon isotope record: geochemical impact of life over 3.8 Ga of Earth history. In: Schidlowski M, Golubic S, Kimberley M, McKirdy D, Trudinger PA, editors. Early organic evolution: implications for mineral and energy resources. 1st ed. Berlin: Springer-Verlag; 1992; 147-75.<br />
+</li>
+<li>Shao P, Zeng X, Moore DJP, Zeng X. Soil microbial respiration from observations and Earth system models. Environ Res Lett. 2013;8:034034. using a global database. Biogeosciences. 2015;12:4121-32.<br />
+</li>
+<li>Walker JCG. The oxygen cycle. In: Hutzinger O. The Natural Environment and the Biogeochemical Cycles. Berlin: Springer-Verlag; 1980.<br />
+</li>
+<li>Waters CN, Zalasiewicz J, Summerhayes C, et al. The Anthropocene is functionally and stratigraphically distinct from the Holocene. Science. 2016;351(6269):aad2622.<br />
+</li>
+<li>Whitman WB, Coleman DC, and Wiebe WJ. Prokaryotes: The unseen majority. Proc Natl Acad Sci USA. 1998;95(12):6578–6583.</li>
+</ol>
+</div>
+</div>
+<div id="module-02" class="section level1">
+<h1>Module 02</h1>
+<div id="metagenomics-genomic-analysis-of-microbial-communities" class="section level2">
+<h2>Metagenomics: Genomic Analysis of Microbial Communities</h2>
+<div id="problem-set_03" class="section level3">
+<h3>Problem set_03</h3>
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/15864265">Madsen 2005</a> <em>Identifying microorganisms responsible for ecologically significant biogeochemical processes</em></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/20195499">Wooley et al. 2009</a> <em>A Primer on Metagenomics</em></p>
+<div id="learning-objectives-5" class="section level4">
+<h4>Learning objectives:</h4>
+<p>Specific emphasis should be placed on the process used to find the answer. Be as comprehensive as possible e.g. provide URLs for web sources, literature citations, etc.</p>
+</div>
+<div id="specific-questions-2" class="section level4">
+<h4>Specific Questions:</h4>
+<ul>
+<li><p>How many prokaryotic divisions have been described and how many have no cultured representatives (microbial dark matter)?</p>
+<p>As of 2013, 60 divisions have been described, half of which were not cultured <a href="https://www.nature.com/articles/nature12352">(Rinke et al. 2013)</a></p></li>
+<li><p>How many metagenome sequencing projects are currently available in the public domain and what types of environments are they sourced from?</p>
+<p>The Joint Genome Institute’s Genomes Online Database (JGI GOLD) currently <a href="https://gold.jgi.doe.gov/studies?Study.Metagenomic+Study=Yes&amp;Study.Is+Public=Yes#">lists</a> 51.5k public metagenome sequencing projects, and 1.4k studies.<br />
+JGI GOLD currents lists the following ecosystem types:</p>
+<pre><code>Activated Sludge, Aerobic, Agricultural field, Anaerobic, Anaerobic digestor, Aquaculture, Ascidians, Asteroidea, Bacteria, Beetle, Biochar, Bone, Breviatea, Brown Algae, Bryozoans, Canal, Circulatory system, City, Cnidaria, Composting, Continuous culture, Ctenophora, Currency notes, Dairy products, Deep subsurface, Defined, Defined media, Digestive system, Dinoflagellates, Endosphere, Engineered product, Excretory system, Eye, Fermented beverages, Fermented seafood, Fermented vegetables, Freshwater, Fungi, Gastrointestinal tract, Genetic cross, Geologic, Green algae, House, Hydrocarbon, Indoor Air, Industrial wastewater, Integument, Intracellular endosymbionts, Lab synthesis, Landfill, Leaf, Lichen, Lymphatic, Lymphatic system, Mammals, Marine, Meat products, Microbial enhanced oil recovery, Microbial solubilization of coal, Mixed alcohol bioreactor, Mollusca, Mycelium, Nematoda, Nervous system, Nodule, Non-marine Saline and Alkaline, Nutrient removal, Oil refinery, Oil reservoir, Oomycetes, Outdoor Air, Peat, Peat moss, Persistent organic pollutants (POP), Phylloplane, Phyllosphere, Plant litter, Platyhelminthes, Red algae, Reproductive system, Respiratory system, Rhizome, Rhizoplane, Rhizosphere, Rock-dwelling (subaerial biofilms), Roots, Sediment, Shell, Silage fermentation, Simulated communities (DNA mixture), Simulated communities (microbial mixture), Simulated communities (sequence read mixture), Skin, Soil, Solar panel, Solid animal waste, Spacecraft Assembly Cleanrooms, Sponge, Symbiotic fungal gardens and galleries, Tailings pond, Tetrachloroethylene and derivatives, Thermal springs, Thermal springs, Thiocyanate, Tissue, Tunicates, Unclassified, Undefined media, Volcanic, Water treatment plant, Whole body, Wood</code></pre></li>
+<li><p>What types of on-line resources are available for warehousing and/or analyzing environmental sequence information (provide names, URLS and applications)?</p>
+<p><a href="https://www.arb-silva.de/">SILVA</a> is a database of over 8 million quality-checked and aligned small (16S, 18S) and large (23S and 28S) rRNA sequences from bacteria, archaea, and eukarya<br />
+<a href="https://www.ncbi.nlm.nih.gov/refseq/">RefSeq</a> is a database of non-redundant, annotated, reference assembled genomic DNA, transcripts, and proteins<br />
+<a href="https://gold.jgi.doe.gov/">JGI GOLD</a> is a database of global genome and metagenome sequencing projects. Projects are usually linked to RefSeq entries<br />
+<a href="https://img.jgi.doe.gov/">JGI IMG/M</a> is a database of microbial genome and microbiome sequenced at JGI<br />
+<a href="http://www.mg-rast.org/">MG-RAST</a> is an online server that annotates metagenomic data by comparing to both protein and nucleotide databases<br />
+<a href="http://ab.inf.uni-tuebingen.de/software/megan6/welcome/">MEGAN</a> is an taxonomic and functional analysis toolbox which for microbiome data<br />
+<a href="https://rdp.cme.msu.edu/">RDP</a> is a database of over 3 million quality-controlled, aligned and annotated Bacterial &amp; Archaeal 16S, and funcal 28S rRNA sequences</p></li>
+<li><p>What is the difference between phylogenetic and functional gene anchors and how can they be used in metagenome analysis?<br />
+Phylogenetic anchors are genes which are characteristic to a taxonomic unit due to the accumulation of mutations through evolution/vertical transmission. Ideally they are single copy genes. Ther are also good for constructing phylogenetic trees. E.g.16S &amp; 18S rRNA genes.<br />
+Functional anchors are protein encoding genes diagnostic of pathways &amp; metabolic functions. They’re often horizontally transferred, so they’re not as useful for comparing phylogenies. E.g. nitrogenase.</p></li>
+<li><p>What is metagenomic sequence binning? What types of algorithmic approaches are used to produce sequence bins? What are some risks and opportunities associated with using sequence bins for metabolic reconstruction of uncultivated microorganisms?</p>
+<p>Metagenomic binning groups related sequences together into bins representing a single genome. This can be based on various measures such as GC content, codon usage, alignments to reference sequences, etc. Binning using sequences from uncultivated microorganisms potentially links predicted/potential metabolic functions to said uncultivated organisms. But on the flip side, it also risks mistakenly putting the sequence in the wrong bin, leading to contamination. Metagenomic data are usually incomplete, so we usually end up with incomplete genomes in each bin as well. Genetic variations within a species may also lead to binning sequences from the same species in separate bins. Ideally these should be binned together in which the bin itself contains the species-wise variation.</p></li>
+<li><p>Is there an alternative to metagenomic shotgun sequencing that can be used to access the metabolic potential of uncultivated microorganisms? What are some risks and opportunities associated with this alternative?</p>
+<p>An alternative to shotgun sequencing, i.e. shearing genomic DNA before sequencing, is 3rd generation sequencing. This technique requires much less (or no) shearing, as it works with long nucleotide sequences. It also does not require amplification like 2nd generation technologies because it works on a single molecule. Single cell sequencing technology can also be used in conjunction in which cells are separated before sequencing.<br />
+This may drastically reduce errors in binning. Since we can potentially sequence cells separately, we know where each sequence fragment came from. Longer sequences also resolve repetitive regions better, so we can assemble a more complete and accurate genome.<br />
+However 3rd generation sequencing is still in development. Presently it has a high error rate and lower degree of genome completeness Biochemical techniques are also possible, such as enrichment culturing where the growth media only supports the metabolic function desired. Imaging techniques such as FISH can also reveal the presence of conserved genomic sequences (DNA) or gene expression (RNA).</p></li>
+</ul>
+</div>
+</div>
+<div id="evidence-worksheet-04" class="section level3">
+<h3>Evidence worksheet 04</h3>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1838496/">Martinez et al. 2007</a> <em>Proteorhodopsin photosystem gene expression enables photophosphorylation in a heterologous host</em></p>
+<div id="learning-objectives-6" class="section level4">
+<h4>Learning objectives</h4>
+<p>Discuss the relationship between microbial community structure and metabolic diversity<br />
+Evaluate common methods for studying the diversity of microbial communities<br />
+Recognize basic design elements in metagenomic workflows</p>
+</div>
+<div id="general-questions-3" class="section level4">
+<h4>General questions</h4>
+<ul>
+<li><p>What were the main questions being asked?</p>
+<p>What are the structure and function of a proteorhodopsin photosystem derived from a large-insert marine pickplankton DNA library?</p></li>
+<li><p>What were the primary methodological approaches used?</p>
+<p>Fosmid (F plasmid, single copy origin of replication; some have 2nd origin of replication that works with a mutant Rep protein induced by arabinose for indicible high copy) library prepared from ocean surface water picoplankton was introduced to E. coli. Fosmid copy number was controlled (via additional origin of replication) to be high or low, and retinal in growth was present or absent.<br />
+Transposon mutagenesis was used for genotypic and phenotypic analyses.</p>
+<p><strong>Development of a functional screen using metagenomic samples for a function of interest</strong></p></li>
+<li><p>Summarize the main results or findings.</p>
+<p>3 clones were found to be orange even in the absence of retinal when the fosmid was induced to have a high copy number. 2 clones were sequenced.<br />
+Proteorhodopsin gene was found in close proximity to beta carotene and retinal biosynthesis genes in both clones.<br />
+Both clones were derived from Alphaproteobacteria from the Mediterranean and Red Seas.<br />
+Both proteorhodopsin genes encoded glutamine at position 105, which was charcteristic of blue light absoroption.<br />
+Transposon insertion at the proteorhodopsin gene and 3 other beta carotene synthesis genes crtE,B,I revealed pale colonies. Disruption of crtY revealed pink colonies and accumulation of lycopene intermediate. Disruption of blh (beta carotene cleavage to retinal) revealed yellow colonies and accumulation of beta carotene intermediate.<br />
+Light dependent pH change detected for clones under high copy conditions but not mutants with transposon insertion at the proteorhodopsin gene, or those who can’t synthesize retinal.<br />
+Light induced increase in cellular ATP observed for only those with intact proteowhodopsin.<br />
+CCCP (makes membrane permeable to H+) eliminated light driven pH decrease.<br />
+DCCD (inhibits H+ ATPase) did not eliminate pH decrease but inhibited photophosphorylation.</p></li>
+<li><p>Do new questions arise from the results?</p>
+<p>While significant photophosphorylation was observed, does light stimulation actually increase growth rate? Earlier studies measuring this have been inconclusive.</p></li>
+<li><p>Were there any specific challenges or advantages in understanding the paper (<em>e.g.</em> did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?</p>
+<p>Functional screening using essentially single long DNA fragments ignores the possibility that parts of a photosystem may also reside in multuple distant operons, perhaps even utilizing enzymes &amp; intermediate from other pathways.<br />
+Perhaps one or two sentences providing an overview of fosmids and copy number control mechanisms could be useful. Otherwise the language, figures, and explanations were relatively straightforward.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="references-1" class="section level2">
+<h2>References</h2>
+<ol style="list-style-type: decimal">
+<li>Madsen EL. Identifying microorganisms responsible for ecologically significant biogeochemical processes. Nat Rev Microbiol. 2005;3(5):439-46.</li>
+<li>Martinez A, Bradley AS, Waldbauer JR, Summons RE, Delong EF. Proteorhodopsin photosystem gene expression enables photophosphorylation in a heterologous host. Proc Natl Acad Sci USA. 2007;104(13):5590-5.</li>
+<li>Wooley JC, Godzik A, Friedberg I. A primer on metagenomics. PLoS Comput Biol. 2010;6(2):e1000667.</li>
+</ol>
+</div>
+</div>
+<div id="module-03" class="section level1">
+<h1>Module 03</h1>
+<div id="problem-set_04-fine-scale-phylogenetic-architecture" class="section level3">
+<h3>Problem set_04 “Fine-scale phylogenetic architecture”</h3>
+<div id="learning-objectives-7" class="section level4">
+<h4>Learning objectives:</h4>
+<ul>
+<li>Gain experience estimating diversity within a hypothetical microbial community</li>
+</ul>
+</div>
+<div id="part-1-description-and-enumeration" class="section level4">
+<h4>Part 1: Description and enumeration</h4>
+<p>Obtain a collection of “microbial” cells from “seawater”. The cells were concentrated from different depth intervals by a marine microbiologist travelling along the Line-P transect in the northeast subarctic Pacific Ocean off the coast of Vancouver Island British Columbia.</p>
+<p>Sort out and identify different microbial “species” based on shared properties or traits. Record your data in this Rmarkdown using the example data as a guide.</p>
+<p>Once you have defined your binning criteria, separate the cells using the sampling bags provided. These operational taxonomic units (OTUs) will be considered separate “species”. This problem set is based on content available at <a href="http://cnx.org/content/m12179/latest/">What is Biodiversity</a>.</p>
+<p>For example, load in the packages you will use.</p>
+<pre class="r"><code>#To make tables
+library(kableExtra)
+library(knitr)
+#To manipulate and plot data
+library(tidyverse)</code></pre>
+<p>Then load in the data. You should use a similar format to record your community data.</p>
+<pre class="r"><code>community_data = data.frame(
+  number = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14),
+  name = c(&quot;Gummy Bear&quot;,&quot;Brick&quot;,&quot;Jube Jube&quot;,&quot;Kisses&quot;,&quot;M&amp;M&quot;,&quot;Mike &amp; Ike&quot;,&quot;Skittles&quot;,&quot;Sour Bear&quot;,&quot;Sour Bottle&quot;,&quot;Sour Fruit&quot;,&quot;Sour Octopus&quot;,&quot;Sour Swirl&quot;,&quot;Vine&quot;,&quot;Wine Gum&quot;),
+  characteristics = c(&quot;Clear/Green/Yellow/Orange/Light red/Dark red&quot;,&quot;Large/small, Yellow/Green/Blue/Red&quot;,&quot;Green, Orange, Red, Yellow, Purple&quot;,&quot;Silver&quot;,&quot;Blue/Brown/Yellow/Orange/Green/Red&quot;,&quot;Green/Light red/Dark red/Yellow/Orange&quot;,&quot;Green/Purple/Orange/Red/Yellow&quot;,&quot;Red/Yellow/Blue&quot;,&quot;2 colours per piece&quot;,&quot;Watermelon/Berry&quot;,&quot;Blue head, 2 tentacle colours per piece&quot;,&quot;Blue/Red&quot;,&quot;Red&quot;,&quot;Various wine flavours&quot;),
+  occurences = c(101,18,24,16,241,174,187,3,3,2,6,3,14,9)
+)</code></pre>
+<p>Finally, use these data to create a table.</p>
+<pre class="r"><code>community_data %&gt;% 
+  kable(&quot;html&quot;) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, font_size = 10, full_width = F)</code></pre>
+<table class="table table-striped" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+number
+</th>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:left;">
+characteristics
+</th>
+<th style="text-align:right;">
+occurences
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Gummy Bear
+</td>
+<td style="text-align:left;">
+Clear/Green/Yellow/Orange/Light red/Dark red
+</td>
+<td style="text-align:right;">
+101
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Brick
+</td>
+<td style="text-align:left;">
+Large/small, Yellow/Green/Blue/Red
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Jube Jube
+</td>
+<td style="text-align:left;">
+Green, Orange, Red, Yellow, Purple
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Kisses
+</td>
+<td style="text-align:left;">
+Silver
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+M&amp;M
+</td>
+<td style="text-align:left;">
+Blue/Brown/Yellow/Orange/Green/Red
+</td>
+<td style="text-align:right;">
+241
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Mike &amp; Ike
+</td>
+<td style="text-align:left;">
+Green/Light red/Dark red/Yellow/Orange
+</td>
+<td style="text-align:right;">
+174
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Skittles
+</td>
+<td style="text-align:left;">
+Green/Purple/Orange/Red/Yellow
+</td>
+<td style="text-align:right;">
+187
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Sour Bear
+</td>
+<td style="text-align:left;">
+Red/Yellow/Blue
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+Sour Bottle
+</td>
+<td style="text-align:left;">
+2 colours per piece
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Sour Fruit
+</td>
+<td style="text-align:left;">
+Watermelon/Berry
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+Sour Octopus
+</td>
+<td style="text-align:left;">
+Blue head, 2 tentacle colours per piece
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+Sour Swirl
+</td>
+<td style="text-align:left;">
+Blue/Red
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+Vine
+</td>
+<td style="text-align:left;">
+Red
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+Wine Gum
+</td>
+<td style="text-align:left;">
+Various wine flavours
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+</tbody>
+</table>
+<p>For your sample:</p>
+<ul>
+<li>Construct a table listing each species, its distinguishing characteristics, the name you have given it, and the number of occurrences of the species in the collection.</li>
+<li>Ask yourself if your collection of microbial cells from seawater represents the actual diversity of microorganisms inhabiting waters along the Line-P transect. Were the majority of different species sampled or were many missed?</li>
+</ul>
+</div>
+<div id="part-2-collectors-curve" class="section level4">
+<h4>Part 2: Collector’s curve</h4>
+<p>To help answer the questions raised in Part 1, you will conduct a simple but informative analysis that is a standard practice in biodiversity surveys. This analysis involves constructing a collector’s curve that plots the cumulative number of species observed along the y-axis and the cumulative number of individuals classified along the x-axis. This curve is an increasing function with a slope that will decrease as more individuals are classified and as fewer species remain to be identified. If sampling stops while the curve is still rapidly increasing then this indicates that sampling is incomplete and many species remain undetected. Alternatively, if the slope of the curve reaches zero (flattens out), sampling is likely more than adequate.</p>
+<p>To construct the curve for your samples, choose a cell within the collection at random. This will be your first data point, such that X = 1 and Y = 1. Next, move consistently in any direction to a new cell and record whether it is different from the first. In this step X = 2, but Y may remain 1 or change to 2 if the individual represents a new species. Repeat this process until you have proceeded through all cells in your collection.</p>
+<p>For example, we load in these data.</p>
+<pre class="r"><code>collectors_curve_data = data.frame(
+  x = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107),
+  y = c(1,2,3,3,3,3,4,5,6,6,6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,8,9,10,10,10,10,10,10,10,10,10,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11)
+)</code></pre>
+<p>And then create a plot. We will use a scatterplot (geom_point) to plot the raw data and then add a smoother to see the overall trend of the data.</p>
+<pre class="r"><code>ggplot(collectors_curve_data, aes(x=x, y=y)) +
+  geom_point() +
+  geom_smooth() +
+  labs(x=&quot;Cumulative number of individuals classified&quot;, y=&quot;Cumulative number of species observed&quot;)</code></pre>
+<pre><code>## `geom_smooth()` using method = 'loess'</code></pre>
+<p><img src="data:image/png;base64,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" width="672" /></p>
+<p>For your sample:</p>
+<ul>
+<li>Create a collector’s curve.</li>
+<li><p>Does the curve flatten out? If so, after how many individual cells have been collected?</p>
+<p>The curve flattens out after approx. 50 individuals.</p></li>
+<li><p>What can you conclude from the shape of your collector’s curve as to your depth of sampling?</p>
+<p>The sampling is adequate because the the curve is flat when all of the individuals are counted.</p></li>
+</ul>
+</div>
+<div id="part-3-diversity-estimates-alpha-diversity" class="section level4">
+<h4>Part 3: Diversity estimates (alpha diversity)</h4>
+<p>Using the table from Part 1, calculate species diversity using the following indices or metrics.</p>
+<div id="diversity-simpson-reciprocal-index" class="section level5">
+<h5>Diversity: Simpson Reciprocal Index</h5>
+<p><span class="math inline">\(\frac{1}{D}\)</span> where <span class="math inline">\(D = \sum p_i^2\)</span></p>
+<p><span class="math inline">\(p_i\)</span> = the fractional abundance of the <span class="math inline">\(i^{th}\)</span> species</p>
+<p>For example, using the example data 1 with 3 species with 2, 4, and 1 individuals each, D =</p>
+<pre class="r"><code>species1 = 2/(2+4+1)
+species2 = 4/(2+4+1)
+species3 = 1/(2+4+1)
+
+1 / (species1^2 + species2^2 + species3^2)</code></pre>
+<pre><code>## [1] 2.333333</code></pre>
+<p>The higher the value is, the greater the diversity. The maximum value is the number of species in the sample, which occurs when all species contain an equal number of individuals. Because the index reflects the number of species present (richness) and the relative proportions of each species with a community (evenness), this metric is a diveristy metric. Consider that a community can have the same number of species (equal richness) but manifest a skewed distribution in the proportion of each species (unequal evenness), which would result in different diveristy values.</p>
+<ul>
+<li>What is the Simpson Reciprocal Index for your sample?</li>
+</ul>
+<pre class="r"><code>simpson_D = 0
+community_count = sum(community_data$occurences)
+for (i in 1:length(community_data$number)) {
+  simpson_D = simpson_D + (community_data$occurences[i] / community_count) ^ 2
+}
+1 / simpson_D</code></pre>
+<pre><code>## [1] 4.75165</code></pre>
+</div>
+<div id="richness-chao1-richness-estimator" class="section level5">
+<h5>Richness: Chao1 richness estimator</h5>
+<p>Another way to calculate diversity is to estimate the number of species that are present in a sample based on the empirical data to give an upper boundary of the richness of a sample. Here, we use the Chao1 richness estimator.</p>
+<p><span class="math inline">\(S_{chao1} = S_{obs} + \frac{a^2}{2b})\)</span></p>
+<p><span class="math inline">\(S_{obs}\)</span> = total number of species observed a = species observed once b = species observed twice or more</p>
+<p>So for our previous example community of 3 species with 2, 4, and 1 individuals each, <span class="math inline">\(S_{chao1}\)</span> =</p>
+<pre class="r"><code>3 + 1^2/(2*2)</code></pre>
+<pre><code>## [1] 3.25</code></pre>
+<ul>
+<li>What is the chao1 estimate for your sample?</li>
+</ul>
+<pre class="r"><code>community_species_count = length(community_data$number)
+observed_once = 0
+observed_multiple_times = 0
+for (i in 1:length(community_data$number)) {
+  if (community_data$occurences[i] == 1) {
+    observed_once = observed_once + 1
+  } else {
+    observed_multiple_times = observed_multiple_times + 1
+  }
+}
+community_species_count + (observed_once ^ 2) / (2 * observed_multiple_times)</code></pre>
+<pre><code>## [1] 14</code></pre>
+</div>
+</div>
+<div id="part-4-alpha-diversity-functions-in-r" class="section level4">
+<h4>Part 4: Alpha-diversity functions in R</h4>
+<p>We’ve been doing the above calculations by hand, which is a very good exercise to aid in understanding the math behind these estimates. Not surprisingly, these same calculations can be done with R functions. Since we just have a species table, we will use the <code>vegan</code> package. You will need to install this package if you have not done so previously.</p>
+<pre class="r"><code>library(vegan)</code></pre>
+<p>First, we must remove the unnecesary data columns and transpose the data so that <code>vegan</code> reads it as a species table with species as columns and rows as samples (of which you only have 1).</p>
+<pre class="r"><code>community_data_diversity = 
+  community_data %&gt;% 
+  select(name, occurences) %&gt;% 
+  spread(name, occurences)
+
+community_data_diversity</code></pre>
+<pre><code>##   Brick Gummy Bear Jube Jube Kisses M&amp;M Mike &amp; Ike Skittles Sour Bear
+## 1    18        101        24     16 241        174      187         3
+##   Sour Bottle Sour Fruit Sour Octopus Sour Swirl Vine Wine Gum
+## 1           3          2            6          3   14        9</code></pre>
+<p>Then we can calculate the Simpson Reciprocal Index using the <code>diversity</code> function.</p>
+<pre class="r"><code>diversity(community_data_diversity, index=&quot;invsimpson&quot;)</code></pre>
+<pre><code>## [1] 4.75165</code></pre>
+<p>And we can calculate the Chao1 richness estimator (and others by default) with the the <code>specpool</code> function for extrapolated species richness. This function rounds to the nearest whole number so the value will be slightly different that what you’ve calculated above.</p>
+<pre class="r"><code>specpool(community_data_diversity)</code></pre>
+<pre><code>##     Species chao chao.se jack1 jack1.se jack2 boot boot.se n
+## All      14   14       0    14        0    14   14       0 1</code></pre>
+<p>In Project 1, you will also see functions for calculating alpha-diversity in the <code>phyloseq</code> package since we will be working with data in that form.</p>
+<p>For your sample:</p>
+<ul>
+<li><p>What is the Simpson Reciprocal Index using the R function?</p>
+<p>See above code blocks</p></li>
+<li>What is the chao1 estimate using the R function?
+<ul>
+<li>Verify that these values match your previous calculations.</li>
+</ul>
+<p>See above code blocks. Previous calculations were accurate.</p></li>
+</ul>
+</div>
+<div id="part-5-concluding-activity" class="section level4">
+<h4>Part 5: Concluding activity</h4>
+<p>If you are stuck on some of these final questions, reading the <a href="https://www.ncbi.nlm.nih.gov/pubmed/19725865">Kunin et al. 2010</a> and <a href="https://www.ncbi.nlm.nih.gov/pubmed/23760801">Lundin et al. 2012</a> papers may provide helpful insights.</p>
+<ul>
+<li>How does the measure of diversity depend on the definition of species in your samples?</li>
+<li>Can you think of alternative ways to cluster or bin your data that might change the observed number of species?</li>
+<li>How might different sequencing technologies influence observed diversity in a sample?</li>
+</ul>
 </div>
 </div>
 </div>

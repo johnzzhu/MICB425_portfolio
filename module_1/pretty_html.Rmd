@@ -28,7 +28,7 @@ Perhaps you’re already really confused by the whole markdown thing. Maybe you�
 1231521+12341556280987
 ```
 
-###Table Time
+### Table Time
 Or maybe, after you’ve added those numbers, you feel like it’s about time for a table!  
 I’m going to leave all the guts of the coding here so you can see how libraries (R packages) are loaded into R (more on that later). It’s not terribly pretty, but it hints at how R works and how you will use it in the future. The summary function used below is a nice data exploration function that you may use in the ^^future^^.
 

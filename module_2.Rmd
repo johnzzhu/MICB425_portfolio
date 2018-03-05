@@ -1,0 +1,101 @@
+# Module 02
+
+## Metagenomics: Genomic Analysis of Microbial Communities
+
+### Problem set_03 
+
+[Madsen 2005](https://www.ncbi.nlm.nih.gov/pubmed/15864265) *Identifying microorganisms responsible for ecologically significant biogeochemical processes*  
+
+[Wooley et al. 2009](https://www.ncbi.nlm.nih.gov/pubmed/20195499) *A Primer on Metagenomics*  
+
+#### Learning objectives: 
+Specific emphasis should be placed on the process used to find the answer. Be as comprehensive as possible e.g. provide URLs for web sources, literature citations, etc.  
+
+#### Specific Questions:
+* How many prokaryotic divisions have been described and how many have no cultured representatives (microbial dark matter)?
+
+    As of 2013, 60 divisions have been described, half of which were not cultured [(Rinke et al. 2013)](https://www.nature.com/articles/nature12352)
+  
+
+* How many metagenome sequencing projects are currently available in the public domain and what types of environments are they sourced from?
+
+    The Joint Genome Institute's Genomes Online Database (JGI GOLD) currently [lists](https://gold.jgi.doe.gov/studies?Study.Metagenomic+Study=Yes&Study.Is+Public=Yes#) 51.5k public metagenome sequencing projects, and 1.4k studies.  
+    JGI GOLD currents lists the following ecosystem types: 
+```    
+    Activated Sludge, Aerobic, Agricultural field, Anaerobic, Anaerobic digestor, Aquaculture, Ascidians, Asteroidea, Bacteria, Beetle, Biochar, Bone, Breviatea, Brown Algae, Bryozoans, Canal, Circulatory system, City, Cnidaria, Composting, Continuous culture, Ctenophora, Currency notes, Dairy products, Deep subsurface, Defined, Defined media, Digestive system, Dinoflagellates, Endosphere, Engineered product, Excretory system, Eye, Fermented beverages, Fermented seafood, Fermented vegetables, Freshwater, Fungi, Gastrointestinal tract, Genetic cross, Geologic, Green algae, House, Hydrocarbon, Indoor Air, Industrial wastewater, Integument, Intracellular endosymbionts, Lab synthesis, Landfill, Leaf, Lichen, Lymphatic, Lymphatic system, Mammals, Marine, Meat products, Microbial enhanced oil recovery, Microbial solubilization of coal, Mixed alcohol bioreactor, Mollusca, Mycelium, Nematoda, Nervous system, Nodule, Non-marine Saline and Alkaline, Nutrient removal, Oil refinery, Oil reservoir, Oomycetes, Outdoor Air, Peat, Peat moss, Persistent organic pollutants (POP), Phylloplane, Phyllosphere, Plant litter, Platyhelminthes, Red algae, Reproductive system, Respiratory system, Rhizome, Rhizoplane, Rhizosphere, Rock-dwelling (subaerial biofilms), Roots, Sediment, Shell, Silage fermentation, Simulated communities (DNA mixture), Simulated communities (microbial mixture), Simulated communities (sequence read mixture), Skin, Soil, Solar panel, Solid animal waste, Spacecraft Assembly Cleanrooms, Sponge, Symbiotic fungal gardens and galleries, Tailings pond, Tetrachloroethylene and derivatives, Thermal springs, Thermal springs, Thiocyanate, Tissue, Tunicates, Unclassified, Undefined media, Volcanic, Water treatment plant, Whole body, Wood
+```
+  
+* What types of on-line resources are available for warehousing and/or analyzing environmental sequence information (provide names, URLS and applications)?  
+
+    [SILVA](https://www.arb-silva.de/) is a database of over 8 million quality-checked and aligned small (16S, 18S) and large (23S and 28S) rRNA sequences from bacteria, archaea, and eukarya  
+    [RefSeq](https://www.ncbi.nlm.nih.gov/refseq/) is a database of non-redundant, annotated, reference assembled genomic DNA, transcripts, and proteins  
+    [JGI GOLD](https://gold.jgi.doe.gov/) is a database of global genome and metagenome sequencing projects. Projects are usually linked to RefSeq entries  
+    [JGI IMG/M](https://img.jgi.doe.gov/) is a database of microbial genome and microbiome sequenced at JGI  
+    [MG-RAST](http://www.mg-rast.org/) is an online server that annotates metagenomic data by comparing to both protein and nucleotide databases  
+    [MEGAN](http://ab.inf.uni-tuebingen.de/software/megan6/welcome/) is an taxonomic and functional analysis toolbox which for microbiome data  
+    [RDP](https://rdp.cme.msu.edu/) is a database of over 3 million quality-controlled, aligned and annotated Bacterial & Archaeal 16S, and funcal 28S rRNA sequences
+
+* What is the difference between phylogenetic and functional gene anchors and how can they be used in metagenome analysis?   
+    Phylogenetic anchors are genes which are characteristic to a taxonomic unit due to the accumulation of mutations through evolution/vertical transmission. Ideally they are single copy genes. Ther are also good for constructing phylogenetic trees. E.g.16S & 18S rRNA genes.  
+    Functional anchors are protein encoding genes diagnostic of pathways & metabolic functions. They're often horizontally transferred, so they're not as useful for comparing phylogenies. E.g. nitrogenase.
+
+* What is metagenomic sequence binning? What types of algorithmic approaches are used to produce sequence bins? What are some risks and opportunities associated with using sequence bins for metabolic reconstruction of uncultivated microorganisms?  
+
+    Metagenomic binning groups related sequences together into bins representing a single genome. This can be based on various measures such as GC content, codon usage, alignments to reference sequences, etc.
+    Binning using sequences from uncultivated microorganisms potentially links predicted/potential metabolic functions to said uncultivated organisms. But on the flip side, it also risks mistakenly putting the sequence in the wrong bin, leading to contamination.
+    Metagenomic data are usually incomplete, so we usually end up with incomplete genomes in each bin as well.
+    Genetic variations within a species may also lead to binning sequences from the same species in separate bins. Ideally these should be binned together in which the bin itself contains the species-wise variation.
+    
+* Is there an alternative to metagenomic shotgun sequencing that can be used to access the metabolic potential of uncultivated microorganisms? What are some risks and opportunities associated with this alternative?  
+
+    An alternative to shotgun sequencing, i.e. shearing genomic DNA before sequencing, is 3rd generation sequencing. This technique requires much less (or no) shearing, as it works with long nucleotide sequences. It also does not require amplification like 2nd generation technologies because it works on a single molecule. Single cell sequencing technology can also be used in conjunction in which cells are separated before sequencing.  
+    This may drastically reduce errors in binning. Since we can potentially sequence cells separately, we know where each sequence fragment came from. Longer sequences also resolve repetitive regions better, so we can assemble a more complete and accurate genome.  
+    However 3rd generation sequencing is still in development. Presently it has a high error rate and lower degree of genome completeness
+    Biochemical techniques are also possible, such as enrichment culturing where the growth media only supports the metabolic function desired. Imaging techniques such as FISH can also reveal the presence of conserved genomic sequences (DNA) or gene expression (RNA).
+    
+### Evidence worksheet 04
+
+[Martinez et al. 2007](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1838496/) *Proteorhodopsin photosystem gene expression enables photophosphorylation in a heterologous host*  
+
+#### Learning objectives
+Discuss the relationship between microbial community structure and metabolic diversity  
+Evaluate common methods for studying the diversity of microbial communities  
+Recognize basic design elements in metagenomic workflows  
+
+#### General questions
+* What were the main questions being asked?
+
+    What are the structure and function of a proteorhodopsin photosystem derived from a large-insert marine pickplankton DNA library?
+
+* What were the primary methodological approaches used?
+
+    Fosmid (F plasmid, single copy origin of replication; some have 2nd origin of replication that works with a mutant Rep protein induced by arabinose for indicible high copy) library prepared from ocean surface water picoplankton was introduced to E. coli. Fosmid copy number was controlled (via additional origin of replication) to be high or low, and retinal in growth was present or absent.  
+    Transposon mutagenesis was used for genotypic and phenotypic analyses.  
+    
+    **Development of a functional screen using metagenomic samples for a function of interest**
+
+* Summarize the main results or findings. 
+
+    3 clones were found to be orange even in the absence of retinal when the fosmid was induced to have a high copy number. 2 clones were sequenced.  
+    Proteorhodopsin gene was found in close proximity to beta carotene and retinal biosynthesis genes in both clones.  
+    Both clones were derived from Alphaproteobacteria from the Mediterranean and Red Seas.  
+    Both proteorhodopsin genes encoded glutamine at position 105, which was charcteristic of blue light absoroption.  
+    Transposon insertion at the proteorhodopsin gene and 3 other beta carotene synthesis genes crtE,B,I revealed pale colonies.   Disruption of crtY revealed pink colonies and accumulation of lycopene intermediate. Disruption of blh (beta carotene cleavage to retinal) revealed yellow colonies and accumulation of beta carotene intermediate.  
+    Light dependent pH change detected for clones under high copy conditions but not mutants with transposon insertion at the proteorhodopsin gene, or those who can't synthesize retinal.  
+    Light induced increase in cellular ATP observed for only those with intact proteowhodopsin.  
+    CCCP (makes membrane permeable to H+) eliminated light driven pH decrease.  
+    DCCD (inhibits H+ ATPase) did not eliminate pH decrease but inhibited photophosphorylation.  
+    
+* Do new questions arise from the results?  
+
+    While significant photophosphorylation was observed, does light stimulation actually increase growth rate? Earlier studies measuring this have been inconclusive.
+
+* Were there any specific challenges or advantages in understanding the paper (*e.g.* did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?  
+
+    Functional screening using essentially single long DNA fragments ignores the possibility that parts of a photosystem may also reside in multuple distant operons, perhaps even utilizing enzymes & intermediate from other pathways.  
+    Perhaps one or two sentences providing an overview of fosmids and copy number control mechanisms could be useful. Otherwise the language, figures, and explanations were relatively straightforward. 
+    
+## References
+1. Madsen EL. Identifying microorganisms responsible for ecologically significant biogeochemical processes. Nat Rev Microbiol. 2005;3(5):439-46. 
+2. Martinez A, Bradley AS, Waldbauer JR, Summons RE, Delong EF. Proteorhodopsin photosystem gene expression enables photophosphorylation in a heterologous host. Proc Natl Acad Sci USA. 2007;104(13):5590-5.
+3. Wooley JC, Godzik A, Friedberg I. A primer on metagenomics. PLoS Comput Biol. 2010;6(2):e1000667.  
