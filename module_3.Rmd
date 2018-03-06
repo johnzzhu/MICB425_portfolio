@@ -27,7 +27,7 @@ community_data = data.frame(
   number = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14),
   name = c("Gummy Bear","Brick","Jube Jube","Kisses","M&M","Mike & Ike","Skittles","Sour Bear","Sour Bottle","Sour Fruit","Sour Octopus","Sour Swirl","Vine","Wine Gum"),
   characteristics = c("Clear/Green/Yellow/Orange/Light red/Dark red","Large/small, Yellow/Green/Blue/Red","Green, Orange, Red, Yellow, Purple","Silver","Blue/Brown/Yellow/Orange/Green/Red","Green/Light red/Dark red/Yellow/Orange","Green/Purple/Orange/Red/Yellow","Red/Yellow/Blue","2 colours per piece","Watermelon/Berry","Blue head, 2 tentacle colours per piece","Blue/Red","Red","Various wine flavours"),
-  occurences = c(101,18,24,16,241,174,187,3,3,2,6,3,14,9)
+  occurrences = c(101,18,24,16,241,174,187,3,3,2,6,3,14,9)
 )
 ```
 
@@ -100,9 +100,9 @@ The higher the value is, the greater the diversity. The maximum value is the num
 
 ``` {r}
 simpson_D = 0
-community_count = sum(community_data$occurences)
+community_count = sum(community_data$occurrences)
 for (i in 1:length(community_data$number)) {
-  simpson_D = simpson_D + (community_data$occurences[i] / community_count) ^ 2
+  simpson_D = simpson_D + (community_data$occurrences[i] / community_count) ^ 2
 }
 1 / simpson_D
 ```
@@ -129,7 +129,7 @@ community_species_count = length(community_data$number)
 observed_once = 0
 observed_multiple_times = 0
 for (i in 1:length(community_data$number)) {
-  if (community_data$occurences[i] == 1) {
+  if (community_data$occurrences[i] == 1) {
     observed_once = observed_once + 1
   } else {
     observed_multiple_times = observed_multiple_times + 1
@@ -150,8 +150,8 @@ First, we must remove the unnecesary data columns and transpose the data so that
 ```{r}
 community_data_diversity = 
   community_data %>% 
-  select(name, occurences) %>% 
-  spread(name, occurences)
+  select(name, occurrences) %>% 
+  spread(name, occurrences)
 
 community_data_diversity
 ```
@@ -183,5 +183,21 @@ For your sample:
 If you are stuck on some of these final questions, reading the [Kunin et al. 2010](https://www.ncbi.nlm.nih.gov/pubmed/19725865) and [Lundin et al. 2012](https://www.ncbi.nlm.nih.gov/pubmed/23760801) papers may provide helpful insights. 
 
 * How does the measure of diversity depend on the definition of species in your samples?
+
+    If the definition of species is more granular, the diversity measures increase, since we observe more differences in the same sample.
+
 * Can you think of alternative ways to cluster or bin your data that might change the observed number of species?
-* How might different sequencing technologies influence observed diversity in a sample?
+
+    For our candy sample, we could have included differences in colour which would have increased our species count. Conversely we could have collapsed all chocolate candies and decreased our species count. For microbial species, we could lower the percent similarity threshold to reduce species counts. We could also consider other aspects like metabolic function, physical characteristics, habitat, etc.
+    
+* How might different sequencing technologies influence observed diversity in a sample?  
+
+    Sequencing technologies vary in their error rate and assembly characteristics. This could result in errornous binning and thus influence the species diversity.
+
+* Rules of thumb for consistent data  
+
+    1. Consistent sampling method
+    2. Consistent & clear species definition
+    3. Comparing same gene region using the same primer
+    4. Using curated databases
+    5. Consistent analysis/processing method
