@@ -1,8 +1,8 @@
 # Module 03
+## Microbial Species Concepts
+### Problem set 04 "Fine-scale phylogenetic architecture"
 
-### Problem set_04 "Fine-scale phylogenetic architecture"
 #### Learning objectives: 
-
 * Gain experience estimating diversity within a hypothetical microbial community
 
 #### Part 1: Description and enumeration
@@ -201,3 +201,66 @@ If you are stuck on some of these final questions, reading the [Kunin et al. 201
     3. Comparing same gene region using the same primer
     4. Using curated databases
     5. Consistent analysis/processing method
+    
+    
+### Evidence Worksheet 05
+
+[Welch et al 2002](https://www.ncbi.nlm.nih.gov/pubmed/12471157) *Extensive mosaic structure revealed by the complete genome sequence of uropathogenic Escherichia coli*  
+
+#### Part 1: Learning objectives
+Evaluate the concept of microbial species based on environmental surveys and cultivation studies.  
+Explain the relationship between microdiversity, genomic diversity and metabolic potential  
+
+Comment on the forces mediating divergence and cohesion in natural microbial communities
+
+#### Part 1: General questions
+* What were the main questions being asked?  
+
+    What are the genomic differences in CFT073 with respect to other strains of E coli, pathogenic (EDL933) or non-pathogenic (MG1655), that contribute to its pathogenicity?  
+
+* What were the primary methodological approaches used?  
+
+    Strains are isolated and sequenced by dye-termination methods.  
+    Sequences were assembled SEQMANII, and annoted using MAGPIE, which used GLIMMER to define ORFs. Predicted proteins were searched on BLAST.  
+    Gene orthology was between an CFT073 gene and another EDL933/MG1655 gene if similarity was > 90%, > 90% of both genes was aligned, and the EDL933/MG1655 gene was not matched elsewhere.  
+    Codon usage analysis was performed between backbone and pathogenicity island regions.  
+
+* Summarize the main results or findings.  
+
+    Only 39.7% of combined set of proteins were common to all 3 strains.  
+    CFT073 lacks type III secretion or some toxin genes that are found in other pathogenic E. coli, but is rich in genes for fimbrial adhesins, autotransporters, iron-sequestration systems, and phase-switch recombinases, which contribute to resistance to flushing & pathogenesis in the urinary tract.
+    Although the location relative to the common backbone of many pathogenicity islands were similar between CFT037 and EDL933, their contents varied greatly.
+
+* Do new questions arise from the results?  
+
+    How should the micorbial definition of species change to take into account the frequent gain and loss of genomic sequences, which is heavily environmentally dependent?  
+    Further analysis could be conducted on each sufficiently large island to uncover their contents and how they contribute to uropathogenicity.
+    With modern day technology, we could also expand the comparison to other strains using more multiplexed methods.
+
+* Were there any specific challenges or advantages in understanding the paper (e.g. did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)? 
+
+    Although the figures were clear, I think the article would still benefit on representing more text with more figures. The results still seemed text-heavy.
+
+#### Part 2: Learning objectives
+Comment on the creative tension between gene loss, duplication and acquisition as it relates to microbial genome evolution  
+
+Identify common molecular signatures used to infer genomic identity and cohesion  
+
+Differentiate between mobile elements and different modes of gene transfer  
+
+#### Part 2: Specific questions
+* Based on your reading and discussion notes, explain the meaning and content of the following figure derived from the comparative genomic analysis of three E. coli genomes by Welch et al. Remember that CFT073 is a uropathogenic strain and that EDL933 is an enterohemorrhagic strain. Explain how this study relates to your understanding of ecotype diversity. Provide a definition of ecotype in the context of the human body. Explain why certain subsets of genes in CFT073 provide adaptive traits under your ecological model and speculate on their mode of vertical descent or gene transfer.
+![](module_3/welch_fig_3.PNG)
+
+    The figure plots the size of pathogenicity islands of 2 strains against their relative positions on the shared backbone. Islands located at tRNA genes are labelled as well.  
+    Since an ecotype is defined as a distinct type of organism occupying in a specific environment, and that a human body contains diverse unique enviromnents provided by different organs and bodily locations, there is a high diversity in the ecotypes of microbes who are adapted to live in each environment on the body.  
+    To adapt to diverse environments, there must be specifc accessory genes. This is exemplified by the special adhesins present in CFT073 which enables it to resist urinary tract flushing.  
+    Accessory genes are usually transferred horizontally which enables rapid development in pathogenicity and are subsequently vertically transmitted. The core set of essential genes, on the other hand, are usually only vertically transmitted during division.  
+
+## References
+1. Kunin V, Engelbrektson A, Ochman H, Hugenholtz P. Wrinkles in the rare biosphere: pyrosequencing errors can lead to artificial inflation of diversity estimates. Environ Microbiol. 2010;12(1):118-23.
+2. Lundin D, Severin I, Logue JB, Ostman O, Andersson AF, Lindström ES. Which sequencing depth is sufficient to describe patterns in bacterial α- and β-diversity?. Environ Microbiol Rep. 2012;4(3):367-72.
+3. Welch RA, Burland V, Plunkett G, et al. Extensive mosaic structure revealed by the complete genome sequence of uropathogenic Escherichia coli. Proc Natl Acad Sci USA. 2002;99(26):17020-4.
+
+```{r child="project_1.Rmd"} 
+```

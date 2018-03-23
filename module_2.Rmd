@@ -1,8 +1,8 @@
 # Module 02
 
-## Metagenomics: Genomic Analysis of Microbial Communities
+## Remapping the body of the world
 
-### Problem set_03 
+### Problem set 03 
 
 [Madsen 2005](https://www.ncbi.nlm.nih.gov/pubmed/15864265) *Identifying microorganisms responsible for ecologically significant biogeochemical processes*  
 

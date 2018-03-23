@@ -1,0 +1,57 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+``` {r}
+library(tidyverse)
+library(phyloseq)
+load("qiime2_phyloseq.RData")
+load("mothur_phyloseq.RData")
+```
+
+```{r, fig.width=25,fig.height=25}
+plot_bar(qiime2, fill="Phylum") +
+geom_bar(aes(fill=Phylum), stat="identity") +
+facet_wrap(~Phylum, scales="free_y") +
+theme(legend.position="none") +
+labs(title="ASV_Phylum")
+plot_bar(mothur, fill="Phylum") +
+geom_bar(aes(fill=Phylum), stat="identity") +
+facet_wrap(~Phylum, scales="free_y") +
+theme(legend.position="none") +
+labs(title="OTU_Phylum")
+
+plot_bar(qiime2, fill="Class") +
+geom_bar(aes(fill=Class), stat="identity") +
+facet_wrap(~Class, scales="free_y") +
+theme(legend.position="none") +
+labs(title="ASV_Class")
+plot_bar(mothur, fill="Class") +
+geom_bar(aes(fill=Class), stat="identity") +
+facet_wrap(~Class, scales="free_y") +
+theme(legend.position="none") +
+labs(title="OTU_Class")
+
+plot_bar(qiime2, fill="Order") +
+geom_bar(aes(fill=Order), stat="identity") +
+facet_wrap(~Order, scales="free_y") +
+theme(legend.position="none") +
+labs(title="ASV_Order")
+plot_bar(mothur, fill="Order") +
+geom_bar(aes(fill=Order), stat="identity") +
+facet_wrap(~Order, scales="free_y") +
+theme(legend.position="none") +
+labs(title="OTU_Order")
+
+plot_bar(qiime2, fill="Family") + 
+geom_bar(aes(fill=Family), stat="identity") + 
+facet_wrap(~Family, scales="free_y") +
+theme(legend.position="none") +
+labs(title="ASV_Family")
+plot_bar(mothur, fill="Family") + 
+geom_bar(aes(fill=Family), stat="identity") + 
+facet_wrap(~Family, scales="free_y") +
+theme(legend.position="none") +
+labs(title="OTU_Family")
+```
